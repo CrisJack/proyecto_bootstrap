@@ -30,3 +30,11 @@ footer .columnas div a{
     /* opacity: 0.6; */
    padding-right: 100px;
   }
+  .card{
+      margin-top: 10px;
+      margin-bottom:10px;
+  }
+  .tarjetas img{
+      height: 200px;
+      width: 100%;
+  }
