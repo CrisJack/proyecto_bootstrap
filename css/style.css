@@ -7,7 +7,7 @@ footer .columnas div a{
     
 }
 .slider img{
-    height: 40vh;
+    height: 60vh;
     filter: grayscale(70%);    
 }
 .slider {
@@ -15,7 +15,7 @@ footer .columnas div a{
    
 }
 .texto{
-    height: 40vh;
+    height: 60vh;
 }
 .negro:before {
     content: "";
@@ -26,7 +26,7 @@ footer .columnas div a{
     bottom: 0;
      background-color:rgb(26, 26, 29,0.6);/*la ultima opcion del rgb es la transparencia*/
     width: 100%; 
-    height: 40vh;
+    height: 60vh;
     /* opacity: 0.6; */
    padding-right: 100px;
   }
@@ -37,4 +37,19 @@ footer .columnas div a{
   .tarjetas img{
       height: 200px;
       width: 100%;
+  }
+  .tarjetas span{
+      margin: 10px 0;
+  }
+  .tercero .texto-honolulu{
+      background-color: #343a40;
+      color: #ffffff;
+      margin: 0;
+  }
+  .tercero .imagen{
+    margin: 0 ;
+    padding: 0;
+  }
+  .tercero .boton-honolulu{
+    margin-left: 10px;
   }

@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#navbar" data-offset="0">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark px-5 fixed-top">
         <a class="navbar-brand" href="#">Bootstrap</a>
         <button
           class="navbar-toggler"
@@ -31,34 +31,92 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
+            <li class="nav-item">
+              <a class="nav-link" href="#conferencias"
                 >Las Conferencias <span class="sr-only">(current)</span></a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Los Oradores</a>
+              <a class="nav-link" href="#oradores">Los Oradores</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">El Lugar y La Fecha</a>
+              <a class="nav-link" href="#lugaryfecha">El Lugar y La Fecha</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Conviértete en Orador</a>
+              <a class="nav-link" href="#conviertete">Conviértete en Orador</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Comprar Tickets</a>
+              <a style="color: rgb(80, 194, 80);" type="btn btn-success" class="nav-link" data-toggle="modal" data-target="#exampleModal" href="#">Comprar Tickets</a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true"
+              <a class="nav-link " href="#" tabindex="-1" aria-disabled="true" style="display: none;"
                 >Disabled</a
               >
             </li>
           </ul>
         </div>
       </nav>
+      <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        <b>Comprar Tickets</b>
+                      </h5>
+                      <button
+                        type="button"
+                        class="close"
+                        data-dismiss="modal"
+                        aria-label="Close"
+                      >
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-row align-items-center">
+                            <div class="col-12">
+                            <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">@</div>
+                              </div>
+                              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                            </div>
+                            <div class="row my-4 mx-1 justify-content-center" style="background: rgb(238, 241, 19); border-radius: 3px; color: rgb(129, 81, 46);">
+                              <h6 class="p-2">Reciviras un correo de confirmación si sales sorteado</h6>
+                            </div>
+                          </div>                              
+                        </div>
+                                              
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-dismiss="modal"
+                      >
+                        Cancelar
+                      </button>
+                      <button type="button" class="btn btn-success">
+                        Comprar
+                      </button>
+                    </div>
+                  </form>
+                  </div>
+                </div>
+              </div>
     </header>
     <main>
-      <section class="slaider-carousel">
+      <section id="conferencias" class="slaider-carousel">
         <div class="container-fluid">
           <div class="row seccion">
             <div class="col px-0">
@@ -111,7 +169,7 @@
                           <button type="button" class="btn btn-outline-light">
                             Quiero Ser Orador
                           </button>
-                          <button type="button" class="btn btn-success">
+                          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
                             Comprar Tickets
                           </button>
                         </div>
@@ -124,7 +182,7 @@
           </div>
         </div>
       </section>
-      <section class="tarjetas">
+      <section id="oradores" class="tarjetas">
         <div class="container">
           <div class="row">
             <div class="col text-center">
@@ -133,10 +191,16 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-md-4">
               <div class="card">
-                <img src="./assets/img/ora1.jpg" class="card-img-top" alt="..." />
+                <img
+                  src="./assets/img/ora1.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
+                  <span class="badge badge-warning">Dr.</span>
+                  <span class="badge badge-info">Roberto</span>
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">
                     Some quick example text to build on the card title and make
@@ -145,10 +209,16 @@
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-md-4">
               <div class="card">
-                <img src="./assets/img/ora2.jpg" class="card-img-top" alt="..." />
+                <img
+                  src="./assets/img/ora2.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
+                  <span class="badge badge-warning">Ing.</span>
+                  <span class="badge badge-info">Adolfo</span>
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">
                     Some quick example text to build on the card title and make
@@ -157,10 +227,16 @@
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-md-4">
               <div class="card">
-                <img src="./assets/img/ora3.jpg" class="card-img-top" alt="..." />
+                <img
+                  src="./assets/img/ora3.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
+                  <span class="badge badge-warning">Mg.</span>
+                  <span class="badge badge-info">Ernesto</span>
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">
                     Some quick example text to build on the card title and make
@@ -169,10 +245,16 @@
                 </div>
               </div>
             </div>
-            <div class="col-4">
+            <div class="col-12 col-sm-6 col-md-4">
               <div class="card">
-                <img src="./assets/img/ora4.jpg" class="card-img-top" alt="..." />
+                <img
+                  src="./assets/img/ora4.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
                 <div class="card-body">
+                  <span class="badge badge-warning">Dr.</span>
+                  <span class="badge badge-info">Cristopher</span>
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">
                     Some quick example text to build on the card title and make
@@ -183,6 +265,70 @@
             </div>
           </div>
         </div>
+      </section>
+      <section id="lugaryfecha" class="tercero">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="imagen col-12 col-lg-6">
+              <img class="img-fluid" src="assets/img/honolulu.jpg" alt="..." />
+            </div>
+            <div class="p-3 texto-honolulu text-left col-12 col-lg-6">
+              <h1>Honolulu - Octubre 2025</h1>
+              <p>
+                Honolulu o Honolulú​ es la capital y localidad más grande del
+                estado de Hawái, en los Estados Unidos. Honolulu es la más
+                sureña de entre las principales ciudades estadounidenses. Aunque
+                el nombre de Honolulu se refiere al área urbana en la costa
+                sureste de la isla de Oahu, la ciudad y el condado de Honolulu
+                han formado una ciudad-condado consolidada que cubre toda la
+                isla (aproximadamente 600 km² de superficie).
+              </p>
+              <div class="row boton-honolulu">
+                <button type="button" class="btn btn-outline-light ">
+                  Conoce más
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="conviertete" class="formulario">
+        <div class="row">
+          <div class="col text-center mt-3">
+            <h6 class="text-muted">CONVIÉRTETE EN UN</h6>
+            <h1>ORADOR</h1>
+            <h6>Anótate como orador para dar una <u data-toggle="tooltip" data-placement="top" title="Charla de 5 min">charla ignite</u>. Cuéntanos de qué quieres hablar!</h6>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6 offset-3">
+            <form>
+                <div class="row">
+                  <div class="my-1 col-12 col-md-6">
+                    <input type="text" class="form-control" placeholder="Nombre">
+                  </div>
+                  <div class="my-1 col-12 col-md-6">
+                    <input type="text" class="form-control" placeholder="Apellido">
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="my-2 col-12">
+                        <div class="form-group">                  
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Sobre que quieres hablar?"></textarea>
+                            <label for="exampleFormControlTextarea1">Recuerda incluir un título para tu charla</label>
+                          </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="mb-2 col-12">
+                        <button type="button" class="btn btn-success" style="width: 100%;">Enviar</button>
+                    </div>
+                  </div>
+              </form>
+          </div>
+            
+        </div>
+        
       </section>
     </main>
     <footer>
@@ -217,5 +363,10 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
   </body>
 </html>
